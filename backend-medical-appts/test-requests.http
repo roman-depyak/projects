@@ -1,0 +1,81 @@
+### CREATE five documents.
+POST http://localhost:3000/medicalAppts HTTP/1.1
+content-type: application/json
+
+{
+    "apptType": "Cystoscopy",
+    "cptCode": 52000,
+    "date": "7/11/2022"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/medicalAppts HTTP/1.1
+content-type: application/json
+
+{
+    "apptType": "Urodynamics",
+    "cptCode": 51726,
+    "date": "1/31/2023"
+}
+
+### CREATE 3
+POST http://localhost:3000/medicalAppts HTTP/1.1
+content-type: application/json
+
+{
+    "apptType": "Radical Prostatectomy",
+    "cptCode": 55866,
+    "date": "11/20/2024"
+}
+
+### CREATE 4
+POST http://localhost:3000/medicalAppts HTTP/1.1
+content-type: application/json
+
+{
+    "apptType": "Extracorporeal Shock Wave Lithotripsy",
+    "cptCode": 50590,
+    "date": "11/13/2024"
+}
+
+### CREATE 5
+POST http://localhost:3000/medicalAppts HTTP/1.1
+content-type: application/json
+
+{
+    "apptType": "Percutaneous nephrolithotomy",
+    "cptCode": 50081,
+    "date": "3/24/2023"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/medicalAppts HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/medicalAppts/64d3b1398146c0d744a4b95b HTTP/1.1
+
+
+### UPDATE one document's cptCode, by ID.
+### Replace the ID in the following request with one that exists
+### and update the cptCode:
+PUT http://localhost:3000/medicalAppts/64d3afbb0816f78a7cedf90a HTTP/1.1
+content-type: application/json
+
+{
+    "apptType": "Testicular Torsion Repair",
+    "cptCode": 54600,
+    "date": "10/23/2024"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/medicalAppts/64d3afbb0816f78a7cedf90a HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/medicalAppts HTTP/1.1
